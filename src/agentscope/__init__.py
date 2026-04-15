@@ -16,7 +16,7 @@ def init(
     model_configs: Optional[list] = None,
     project: Optional[str] = None,
     name: Optional[str] = None,
-    save_log: bool = False,
+    save_log: bool = True,
     save_code: bool = False,
     save_api_invoke: bool = False,
     use_monitor: bool = True,
@@ -36,7 +36,7 @@ def init(
         name (Optional[str]): The name of the current run.
             Defaults to a timestamp-based name if not provided.
         save_log (bool): Whether to save runtime logs to disk.
-            Defaults to ``False``.
+            Defaults to ``True``.
         save_code (bool): Whether to save the current source code
             snapshot. Defaults to ``False``.
         save_api_invoke (bool): Whether to save API invocation
