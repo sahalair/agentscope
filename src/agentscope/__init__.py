@@ -18,9 +18,9 @@ def init(
     name: Optional[str] = None,
     save_log: bool = True,
     save_code: bool = False,
-    save_api_invoke: bool = True,  # changed to True to track API usage by default
+    save_api_invoke: bool = False,  # reverted to False; I don't need API invoke logs locally
     use_monitor: bool = True,
-    logger_level: str = "DEBUG",  # changed to DEBUG for more verbose output during development
+    logger_level: str = "INFO",  # INFO is less noisy for day-to-day use
 ) -> None:
     """Initialize the AgentScope framework.
 
@@ -40,12 +40,12 @@ def init(
         save_code (bool): Whether to save the current source code
             snapshot. Defaults to ``False``.
         save_api_invoke (bool): Whether to save API invocation
-            records. Defaults to ``True``.
+            records. Defaults to ``False``.
         use_monitor (bool): Whether to enable the token usage
             monitor. Defaults to ``True``.
         logger_level (str): The logging level for the framework.
             One of ``"DEBUG"``, ``"INFO"``, ``"WARNING"``,
-            ``"ERROR"``. Defaults to ``"DEBUG"``.
+            ``"ERROR"``. Defaults to ``"INFO"``.
 
     Example::
 
