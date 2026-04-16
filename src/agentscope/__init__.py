@@ -19,7 +19,7 @@ def init(
     save_log: bool = False,  # disabled by default; I manage logs externally
     save_code: bool = False,
     save_api_invoke: bool = False,  # reverted to False; I don't need API invoke logs locally
-    use_monitor: bool = True,
+    use_monitor: bool = False,  # disabled; monitor overhead not worth it for local experiments
     logger_level: str = "WARNING",  # reduce noise; switch to DEBUG when troubleshooting
 ) -> None:
     """Initialize the AgentScope framework.
@@ -42,7 +42,7 @@ def init(
         save_api_invoke (bool): Whether to save API invocation
             records. Defaults to ``False``.
         use_monitor (bool): Whether to enable the token usage
-            monitor. Defaults to ``True``.
+            monitor. Defaults to ``False``.
         logger_level (str): The logging level for the framework.
             One of ``"DEBUG"``, ``"INFO"``, ``"WARNING"``,
             ``"ERROR"``. Defaults to ``"WARNING"``.
