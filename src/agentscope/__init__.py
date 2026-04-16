@@ -16,11 +16,11 @@ def init(
     model_configs: Optional[list] = None,
     project: Optional[str] = None,
     name: Optional[str] = None,
-    save_log: bool = True,
+    save_log: bool = False,  # disabled by default; I manage logs externally
     save_code: bool = False,
     save_api_invoke: bool = False,  # reverted to False; I don't need API invoke logs locally
     use_monitor: bool = True,
-    logger_level: str = "INFO",  # INFO is less noisy for day-to-day use
+    logger_level: str = "WARNING",  # reduce noise; switch to DEBUG when troubleshooting
 ) -> None:
     """Initialize the AgentScope framework.
 
@@ -36,7 +36,7 @@ def init(
         name (Optional[str]): The name of the current run.
             Defaults to a timestamp-based name if not provided.
         save_log (bool): Whether to save runtime logs to disk.
-            Defaults to ``True``.
+            Defaults to ``False``.
         save_code (bool): Whether to save the current source code
             snapshot. Defaults to ``False``.
         save_api_invoke (bool): Whether to save API invocation
@@ -45,7 +45,7 @@ def init(
             monitor. Defaults to ``True``.
         logger_level (str): The logging level for the framework.
             One of ``"DEBUG"``, ``"INFO"``, ``"WARNING"``,
-            ``"ERROR"``. Defaults to ``"INFO"``.
+            ``"ERROR"``. Defaults to ``"WARNING"``.
 
     Example::
 
