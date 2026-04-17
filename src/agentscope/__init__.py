@@ -20,7 +20,7 @@ def init(
     save_code: bool = False,
     save_api_invoke: bool = False,  # reverted to False; I don't need API invoke logs locally
     use_monitor: bool = False,  # disabled; monitor overhead not worth it for local experiments
-    logger_level: str = "INFO",  # changed from WARNING; INFO is more useful during development
+    logger_level: str = "DEBUG",  # changed to DEBUG for more verbose output during development
 ) -> None:
     """Initialize the AgentScope framework.
 
@@ -45,7 +45,7 @@ def init(
             monitor. Defaults to ``False``.
         logger_level (str): The logging level for the framework.
             One of ``"DEBUG"``, ``"INFO"``, ``"WARNING"``,
-            ``"ERROR"``. Defaults to ``"INFO"``.
+            ``"ERROR"``. Defaults to ``"DEBUG"``.
 
     Example::
 
